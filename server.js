@@ -66,7 +66,10 @@ const sessionOptions = {
 };
 app.use(session(sessionOptions));
 app.use(flash());
-app.use(helmet({crossOriginEmbedderPolicy: false}));
+app.use(helmet({
+    crossOriginEmbedderPolicy: false,
+    crossOriginOpenerPolicy: false,
+}));
 
 const scriptSrcUrls = [
     'https://stackpath.bootstrapcdn.com/',
